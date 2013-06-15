@@ -42,6 +42,22 @@ colorscheme solarized
 imap jj <Esc>
 let mapleader = "," 
 
+" Searching
+map N Nzz
+map n nzz
+
 " NerdTree Settings
 map <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+let g:ctrlp_cmd = 'CtrlPMixed'
+
+if has('gui_running')
+  set guifont=Inconsolata\ 13
+  " Remove menu bar
+  set guioptions-=m
+
+  " Remove toolbar
+  set guioptions-=T
+endif
+
