@@ -40,7 +40,7 @@ set background=dark
 colorscheme solarized
 
 imap jj <Esc>
-let mapleader = "<SPACE>" 
+let mapleader = "," 
 
 " NerdTree Settings
 map <C-n> :NERDTreeToggle<CR>
