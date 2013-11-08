@@ -11,6 +11,9 @@ set encoding=utf-8
 set fillchars+=stl:\ ,stlnc:\
 let g:Powerline_symbols = 'compatible'
 
+" Set to auto read when a file is changed from the outside
+set autoread
+
 set hidden
 set wildmenu
 set showcmd
@@ -39,7 +42,16 @@ set expandtab
 set notimeout ttimeout ttimeoutlen=200
 set pastetoggle=<F9>
 
-set fileformats=unix
+set ffs=unix,dos,mac
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Files, backups and undo
+" """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Turn backup off, since most stuff is in SVN, git et.c anyway...
+set nobackup
+set nowb
+set noswapfile
+
 set t_Co=16
 set background=dark
 colorscheme solarized
@@ -56,7 +68,8 @@ map n nzz
 map <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
-let g:ctrlp_cmd = 'CtrlPMixed'
+" let g:ctrlp_cmd = 'CtrlPMixed'
+map <c-b> :CtrlPBuffer<cr>
 
 if has('gui_running')
   set guifont=Inconsolata\ 13
